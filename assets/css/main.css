@@ -1,22 +1,12 @@
-/**
-* Template Name: Axis
-* Template URL: https://bootstrapmade.com/axis-bootstrap-corporate-template/
-* Updated: Sep 13 2025 with Bootstrap v5.3.8
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 @charset "UTF-8";
 
-/*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
---------------------------------------------------------------*/
+
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Montserrat",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+  --default-font: "Inter", sans-serif;
+--heading-font: "Inter", sans-serif;
+--nav-font: "Inter", sans-serif;
+
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -66,7 +56,7 @@
 body {
   color: var(--default-color);
   background-color: var(--background-color);
-  font-family: var(--default-font);
+  font-family: "Inter";
 }
 
 a {
@@ -80,67 +70,51 @@ a:hover {
   text-decoration: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--heading-color);
+/* H1 – Page Title */
+h1 {
   font-family: var(--heading-font);
+  font-size: var(--h1-size);
+  font-weight: var(--font-bold);
+  line-height: var(--h1-line);
+  letter-spacing: -0.5px;
+  color: var(--heading-color);
 }
 
-/* PHP Email Form Messages
-------------------------------*/
-.php-email-form .error-message {
-  display: none;
-  background: #df1529;
-  color: #ffffff;
-  text-align: left;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
+/* H2 – Section Heading */
+h2 {
+  font-family: var(--heading-font);
+  font-size: var(--h2-size);
+  font-weight: var(--font-semibold);
+  line-height: var(--h2-line);
+  color: var(--heading-color);
 }
 
-.php-email-form .sent-message {
-  display: none;
-  color: #ffffff;
-  background: #059652;
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
+/* H3 – Subheading / Card Title */
+h3 {
+  font-family: var(--heading-font);
+  font-size: var(--h3-size);
+  font-weight: var(--font-semibold);
+  line-height: var(--h3-line);
+  color: var(--heading-color);
 }
 
-.php-email-form .loading {
-  display: none;
-  background: var(--surface-color);
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
+
+body, p, span, li {
+  font-family: var(--default-font);
+  font-size: var(--body-size);
+  font-weight: var(--font-regular);
+  line-height: var(--body-line);
+  letter-spacing: var(--body-spacing);
+  color: var(--default-color);
 }
 
-.php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid var(--accent-color);
-  border-top-color: var(--surface-color);
-  animation: php-email-form-loading 1s linear infinite;
+
+b, strong {
+  font-weight: var(--font-bold);
 }
 
-@keyframes php-email-form-loading {
-  0% {
-    transform: rotate(0deg);
-  }
 
-  100% {
-    transform: rotate(360deg);
-  }
-}
+
 
 /*--------------------------------------------------------------
 # Global Header
@@ -900,6 +874,10 @@ section,
 .hero .hero-image img {
   border-radius: 12px;
   box-shadow: 0 20px 60px color-mix(in srgb, var(--default-color), transparent 85%);
+  height: 500px;
+  overflow: hidden;
+  width: 100%;
+  
 }
 
 .hero .hero-image .floating-card {
@@ -907,7 +885,8 @@ section,
   bottom: 20px;
   left: 20px;
   background: var(--surface-color);
-  padding: 1.5rem;
+  padding: 6px 10px;
+  transform:scale(0.85);
   border-radius: 12px;
   box-shadow: 0 10px 40px color-mix(in srgb, var(--default-color), transparent 85%);
   display: flex;
@@ -1761,6 +1740,207 @@ section,
 /*--------------------------------------------------------------
 # Team Section
 --------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Team Section For Mentor
+--------------------------------------------------------------*/
+
+/* Goal Frame Team Member Card */
+.goal-frame-card {
+  border: 3px solid var(--color-primary);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--color-surface);
+  box-shadow: 0 10px 30px rgba(33, 128, 141, 0.15);
+  transition: all 0.3s ease;
+}
+
+.goal-frame-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(33, 128, 141, 0.25);
+  border-color: var(--color-primary-hover);
+}
+
+.team-member-card {
+  display: flex;
+  min-height: 350px;
+}
+
+/* Photo Section (Left) */
+.member-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.member-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.goal-frame-card:hover .member-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.goal-frame-overlay {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+}
+
+.goal-badge {
+  background: var(--color-primary);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(33, 128, 141, 0.3);
+}
+
+/* Details Section (Right) */
+.member-info-wrapper {
+  padding: 40px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.member-info-wrapper h4 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: var(--color-text);
+}
+
+.member-designation {
+  display: inline-block;
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.member-description {
+  margin-bottom: 24px;
+}
+
+.member-description p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Highlights */
+.member-highlights {
+  margin-bottom: 24px;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.highlight-item i {
+  color: var(--color-primary);
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 18px;
+}
+
+.social-links a:hover {
+  background: var(--color-primary);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .team-member-card {
+    min-height: auto;
+    flex-direction: column;
+  }
+
+  .member-img-wrapper {
+    min-height: 280px;
+  }
+
+  .member-info-wrapper {
+    padding: 30px 25px;
+  }
+
+  .member-info-wrapper h4 {
+    font-size: 20px;
+  }
+
+  .goal-badge {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+
+  .highlight-item {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  .member-info-wrapper {
+    padding: 20px 15px;
+  }
+
+  .member-info-wrapper h4 {
+    font-size: 18px;
+  }
+
+  .member-description p {
+    font-size: 14px;
+  }
+
+  .social-links a {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+}
+
+
+
+
+
+
 .team .team-member {
   text-align: center;
   margin-bottom: 40px;
@@ -1768,16 +1948,19 @@ section,
 }
 
 .team .team-member .member-img {
-  position: relative;
+ aspect-ratio: 1/1;
+ position: relative;
   overflow: hidden;
   border-radius: 8px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+  background-color: #f5f5f5;
+
 }
 
 .team .team-member .member-img img {
   transition: all 0.3s ease-in-out;
   width: 100%;
-  height: auto;
+  height: 100%;
   filter: grayscale(100%);
 }
 
@@ -4171,9 +4354,134 @@ section,
   }
 }
 
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
+
+
+
+
+/* ===== CONTACT FORM STYLES ===== */
+
+.php-email-form {
+  background-color: var(--color-surface);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.php-email-form .form-group {
+  margin-bottom: 20px;
+}
+
+.php-email-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: 14px;
+}
+
+.php-email-form input[type="text"],
+.php-email-form input[type="email"],
+.php-email-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.php-email-form input[type="text"]:focus,
+.php-email-form input[type="email"]:focus,
+.php-email-form textarea:focus {
+  border-color: var(--color-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(33, 128, 141, 0.1);
+}
+
+.php-email-form textarea {
+  resize: vertical;
+  font-family: Arial, sans-serif;
+}
+
+.php-email-form .loading {
+  display: none;
+  color: var(--color-primary);
+  text-align: center;
+  padding: 10px;
+  font-weight: 600;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.php-email-form .error-message {
+  display: none;
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  border: 1px solid #f5c6cb;
+  font-size: 14px;
+}
+
+.php-email-form .sent-message {
+  display: none;
+  background-color: #d4edda;
+  color: #155724;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  border: 1px solid #c3e6cb;
+  font-size: 14px;
+}
+
+.php-email-form .my-3 {
+  margin: 20px 0;
+}
+
+.php-email-form .submit-btn {
+  width: 100%;
+  padding: 12px 20px;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.php-email-form .submit-btn:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+}
+
+.php-email-form .submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.php-email-form .submit-btn i {
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .php-email-form {
+    padding: 20px;
+  }
+  
+  .php-email-form input,
+  .php-email-form textarea {
+    font-size: 16px;
+  }
 }
